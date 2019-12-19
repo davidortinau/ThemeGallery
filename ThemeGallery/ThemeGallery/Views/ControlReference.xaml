@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ThemeGallery.Views.ControlReference">
+
+    <ScrollView>
+        <StackLayout Margin="24,20">
+            <Label Text="Light Theme"
+                   Margin="0,0,0,20" HeightRequest="40"
+                   VerticalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+            <!-- BUTTON CLASSES -->
+            <StackLayout Spacing="12">
+                <Label Text="Buttons" 
+                       Style="{ DynamicResource TextSubhead }" />
+                <Button Text="Enabled Button" />
+                <Button Text="Disabled Button" IsEnabled="False" />
+                <Button Text="Primary Button" Style="{StaticResource PrimaryButton}" />
+                <Button Text="Primary Disabled Button" Style="{StaticResource PrimaryButton}" IsEnabled="False" />
+                
+            </StackLayout>
+            
+            <!-- LABEL CLASSES --><!--
+            <StackLayout>
+                <Label Text="Label Classes" Style="{ DynamicResource SectionHeaderStyle }" />
+                <Label Text="Label Class Header" StyleClass="Header" />
+                <Label Text="Label Class Subheader" StyleClass="Subheader" />
+                <Label Text="Label Class Body" StyleClass="Body" />
+                <Label Text="Label Class Link" StyleClass="Link" />
+                <Label Text="Label Class Inverse" StyleClass="Inverse" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Padding="20">
+                <Label Text="ActivityIndicator" Style="{ DynamicResource InnerSectionHeaderStyle }" Margin="-20,0" />
+                <ActivityIndicator IsRunning="true" />
+                <Label Text="BoxView" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <BoxView />
+                <Label Text="Button" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Button Text="Default Button" />
+                --><!--<Button Text="Default" Image="{ StaticResource IconMail }" />--><!--
+                <Label Text="Entry" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Entry Placeholder="E-mail" Text="Entry text" />
+                <Entry StyleClass="Inverse" Placeholder="E-mail inverse" Text="Entry Inverse" />
+                <Label Text="Editor" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Editor Text="I'm an Editor &#xA;and I love multiple lines! ;)" VerticalOptions="FillAndExpand" />
+                <Editor StyleClass="Inverse" Text="I'm an Inverse Editor &#xA;and I love multiple lines! ;)" VerticalOptions="FillAndExpand" />
+                <Label Text="Label" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Label Text="Label" />
+                <Label Text="Frame" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Frame>
+                    <Label Text="This is a frame containing a Label control" />
+                </Frame>
+                <Label Text="Slider" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Slider Maximum="100" Value="50" />
+                <Label Text="Switch" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Switch IsToggled="false" />
+                <Switch IsToggled="true" />
+                <Switch IsToggled="false" IsEnabled="false" />
+                <Switch IsToggled="true" IsEnabled="false" />
+                <Label Text="ProgressBar" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <ProgressBar Progress="0.5" />
+                <Label Text="DatePicker" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <DatePicker VerticalOptions="CenterAndExpand">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+                <Label Text="Picker" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Picker Title="I'm a Picker!">
+                    <Picker.Items>
+                        <x:String>I</x:String>
+                        <x:String>Love</x:String>
+                        <x:String>Xamarin Forms! :)</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="TimePicker" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <TimePicker />
+                <Label Text="SearchBar" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <SearchBar x:Name="themeNamesSearchBar" Placeholder="Search for a name" HorizontalOptions="FillAndExpand" />
+                <Label Text="Stepper" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <Stepper Value="5" Minimum="0" Maximum="10" Increment="0.1" />
+                <Label Text="ListView" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Jaco Pastorius</x:String>
+                            <x:String>Path Metheny</x:String>
+                            <x:String>John Scoffield</x:String>
+                            <x:String>Victor Woten</x:String>
+                            <x:String>More...</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+                <Label Text="TableView intent Settings" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <TableView Intent="Settings" VerticalOptions="Start" HasUnevenRows="false">
+                    <TableView.Root>
+                        <TableSection Title="TableView Intent Settings">
+                            --><!--<ImageCell ImageSource="{ StaticResource UserImage }" Text="Some Text" Detail="Detail" />--><!--
+                            <EntryCell Text="EntryCell Text" />
+                            <EntryCell Placeholder="EntryCell Placeholder" />
+                            <TextCell Detail="TextCell Detail" Text="TextCell Text" />
+                        </TableSection>
+                        <TableSection Title="Connect Your Account">
+                            <SwitchCell On="true" Text="Facebook" />
+                            <SwitchCell Text="Twitter" />
+                        </TableSection>
+                    </TableView.Root>
+                </TableView>
+                <Label Text="TableView intent Form" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <TableView Intent="Form" VerticalOptions="Start" HasUnevenRows="false">
+                    <TableView.Root>
+                        <TableSection Title="TableView Intent Form">
+                            --><!--<ImageCell ImageSource="{ StaticResource UserImage }" Text="Some Text" Detail="Detail" />--><!--
+                            <EntryCell Text="EntryCell Text" />
+                            <EntryCell Placeholder="EntryCell Placeholder" />
+                            <TextCell Detail="TextCell Detail" Text="TextCell Text" />
+                        </TableSection>
+                        <TableSection Title="Connect Your Account">
+                            <SwitchCell On="true" Text="Facebook" />
+                            <SwitchCell Text="Twitter" />
+                        </TableSection>
+                    </TableView.Root>
+                </TableView>
+                <Label Text="TableView intent Data" Style="{ DynamicResource InnerSectionHeaderStyle }" />
+                <TableView Intent="Data" VerticalOptions="Start" HasUnevenRows="false">
+                    <TableView.Root>
+                        <TableSection Title="TableView Intent Data">
+                            --><!--<ImageCell ImageSource="{ StaticResource UserImage }" Text="Some Text" Detail="Detail" />--><!--
+                            <EntryCell Text="EntryCell Text" />
+                            <EntryCell Placeholder="EntryCell Placeholder" />
+                            <TextCell Detail="TextCell Detail" Text="TextCell Text" />
+                        </TableSection>
+                        <TableSection Title="Connect Your Account">
+                            <SwitchCell On="true" Text="Facebook" />
+                            <SwitchCell Text="Twitter" />
+                        </TableSection>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+            --><!--  BOXVIEW CLASSES --><!--
+            <StackLayout>
+                <Label Text="BoxView Classes" Style="{ DynamicResource SectionHeaderStyle }" />
+                <BoxView StyleClass="HorizontalRule" />
+                <BoxView StyleClass="Circle" />
+                <BoxView StyleClass="Rounded" />
+            </StackLayout>
+            --><!--  IMAGE CLASSES --><!--
+            <StackLayout>
+                <Label Text="Image Classes" Style="{ DynamicResource SectionHeaderStyle }" />
+                <Image StyleClass="Circle" Source="{ DynamicResource HeroImageImage }" />
+                <Image StyleClass="Rounded" Source="{ DynamicResource HeroImageImage }" />
+                <Image StyleClass="Thumbnail" Source="{ DynamicResource HeroImageImage }" />
+            </StackLayout>-->
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
