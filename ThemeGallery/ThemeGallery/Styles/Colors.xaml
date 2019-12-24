@@ -42,7 +42,8 @@
 
     <Color x:Key="FlyoutGradientStart">#FF017ED8</Color>
     <Color x:Key="FlyoutGradientEnd">#FF14D9D9</Color>
-    <Color x:Key="NavBarTitleColor" />
+    <Color x:Key="NavBarTitleColor">#FFFFFF
+    </Color>
 
     <Color x:Key="BackgroundColor">#FFFFFF</Color>
     <Color x:Key="TitleColor">#FFFFFF</Color>

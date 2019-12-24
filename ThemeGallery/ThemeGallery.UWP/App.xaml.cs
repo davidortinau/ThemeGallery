@@ -52,6 +52,11 @@ namespace ThemeGallery.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                Xamarin.Forms.Forms.SetFlags(
+                    "IndicatorView_Experimental",
+                    "SwipeView_Experimental",
+                    "CarouselView_Experimental",
+                    "ShellUWP_Experimental");
                 Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)

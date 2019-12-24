@@ -3,37 +3,240 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects"
              mc:Ignorable="d"
+             Shell.FlyoutBehavior="Locked"
              x:Class="ThemeGallery.Views.ControlReference">
 
     <ScrollView>
-        <StackLayout Margin="24,20">
+        <StackLayout Margin="24,20" Spacing="20">
+
             <Label Text="Light Theme"
                    Margin="0,0,0,20" HeightRequest="40"
                    VerticalTextAlignment="Center"
-                   FontAttributes="Bold"
-                   FontSize="Large"/>
-            <!-- BUTTON CLASSES -->
+                   Style="{ DynamicResource TextHeadline }"
+                   />
+
+            <!-- LABEL CLASSES -->
             <StackLayout Spacing="12">
-                <Label Text="Buttons" 
-                       Style="{ DynamicResource TextSubhead }" />
+                <Label Text="Label" Style="{ DynamicResource TextSubHead }" />
+                <Label Text="TextHeadline" Style="{DynamicResource TextHeadline}" />
+                <Label Text="TextSubHead" Style="{DynamicResource TextSubHead}" />
+                <Label Text="TextSubheadSecondary" Style="{DynamicResource TextSubheadSecondary}" />
+                <Label Text="TextTitle" Style="{DynamicResource TextTitle}" />
+                <Label Text="TextBody" Style="{DynamicResource TextBody}" />
+                <Label Text="TextBodySecondary" Style="{DynamicResource TextBodySecondary}" />
+                <Label Text="TextCaption" Style="{DynamicResource TextCaption}" />
+                <Label Text="TextCaptionSecondary" Style="{DynamicResource TextCaptionSecondary}" />
+            </StackLayout>
+
+            <!-- BUTTON  -->
+            <StackLayout Spacing="12">
+                <Label Text="Button" Style="{ DynamicResource TextSubHead }" />
                 <Button Text="Enabled Button" />
                 <Button Text="Disabled Button" IsEnabled="False" />
                 <Button Text="Primary Button" Style="{StaticResource PrimaryButton}" />
                 <Button Text="Primary Disabled Button" Style="{StaticResource PrimaryButton}" IsEnabled="False" />
-                
-            </StackLayout>
-            
-            <!-- LABEL CLASSES --><!--
-            <StackLayout>
-                <Label Text="Label Classes" Style="{ DynamicResource SectionHeaderStyle }" />
-                <Label Text="Label Class Header" StyleClass="Header" />
-                <Label Text="Label Class Subheader" StyleClass="Subheader" />
-                <Label Text="Label Class Body" StyleClass="Body" />
-                <Label Text="Label Class Link" StyleClass="Link" />
-                <Label Text="Label Class Inverse" StyleClass="Inverse" />
+
             </StackLayout>
 
+            <!-- Checkbox -->
+            <StackLayout Spacing="12">
+                <Label Text="Checkbox" Style="{ DynamicResource TextSubHead }" />
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox VerticalOptions="Center"/>
+                    <Label Text="Unchecked" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox VerticalOptions="Center" IsChecked="True"/>
+                    <Label Text="Checked" VerticalOptions="Center"/>
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+            <!-- Switch -->
+            <StackLayout Spacing="12">
+                <Label Text="Switch" Style="{ DynamicResource TextSubHead }" />
+                <Switch IsToggled="false" />
+                <Switch IsToggled="true" />
+                <Switch IsToggled="false" IsEnabled="false" />
+                <Switch IsToggled="true" IsEnabled="false" />
+            </StackLayout>
+
+            <!-- Slider -->
+            <StackLayout Spacing="12">
+                <Label Text="Slider" Style="{ DynamicResource TextSubHead }" />
+                <Slider Minimum="0" Maximum="100" Value="50" />
+                <Slider Minimum="0" Maximum="100" Value="50" IsEnabled="False" />
+            </StackLayout>
+
+            <!-- IndicatorView  -->
+            <StackLayout Spacing="12">
+                <Label Text="IndicatorView" Style="{ DynamicResource TextSubHead }" />
+                <IndicatorView>
+                    <IndicatorView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Jaco Pastorius</x:String>
+                            <x:String>Path Metheny</x:String>
+                            <x:String>John Scoffield</x:String>
+                            <x:String>Victor Woten</x:String>
+                            <x:String>More...</x:String>
+                        </x:Array>
+                    </IndicatorView.ItemsSource>
+                </IndicatorView>
+            </StackLayout>
+
+            <!-- Pickers -->
+            <StackLayout Spacing="12">
+                <Label Text="Pickers" Style="{DynamicResource TextSubHead}"/>
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Grid BackgroundColor="AliceBlue" Padding="0">
+                        <Picker SelectedIndex="2" Margin="0" VerticalOptions="Start">
+                            <Picker.Effects>
+                                <effects:EntryRemoveLine/>
+                                <effects:EntryRemoveBorder/>
+                            </Picker.Effects>
+                            <Picker.Items>
+                                <x:String>I</x:String>
+                                <x:String>Love</x:String>
+                                <x:String>Xamarin Forms! :)</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label Text=">" 
+                               Margin="0,0,5,0"
+                               HorizontalOptions="End" 
+                               Rotation="90"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Grid>
+                        <DatePicker HorizontalOptions="StartAndExpand">
+                            <DatePicker.Effects>
+                                <effects:EntryRemoveLine/>
+                                <effects:EntryRemoveBorder/>
+                            </DatePicker.Effects>
+                        </DatePicker>
+
+                        <Label Text=">" 
+                               Margin="0,0,5,0"
+                               HorizontalOptions="End" 
+                               Rotation="90"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Grid>
+                        <TimePicker HorizontalOptions="Start">
+                            <TimePicker.Effects>
+                                <effects:EntryRemoveLine/>
+                                <effects:EntryRemoveBorder/>
+                            </TimePicker.Effects>
+
+                        </TimePicker>
+                        <Label Text=">" 
+                               Margin="0,0,5,0"
+                               HorizontalOptions="End" 
+                               Rotation="90"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <!-- Entry -->
+            <StackLayout Spacing="12">
+                <Label Text="Entry" Style="{ DynamicResource TextSubHead }" />
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Entry Placeholder="Entry with Placeholder">
+                        <Entry.Effects>
+                            <effects:EntryRemoveLine />
+                            <effects:EntryRemoveBorder/>
+                        </Entry.Effects>
+                    </Entry>
+                </Frame>
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Entry Text="Entry with Text">
+                        <Entry.Effects>
+                            <effects:EntryRemoveLine />
+                            <effects:EntryRemoveBorder/>
+                        </Entry.Effects>
+                    </Entry>
+                </Frame>
+            </StackLayout>
+
+            <!-- Editor  -->
+            <StackLayout Spacing="12">
+                <Label Text="Editor" Style="{ DynamicResource TextSubHead }" />
+                <Frame Style="{StaticResource EntryWrapper}">
+                    <Editor AutoSize="TextChanges">
+                        <Editor.Effects>
+                            <effects:EntryRemoveLine/>
+                            <effects:EntryRemoveBorder/>
+                        </Editor.Effects>
+                    </Editor>
+                </Frame>
+            </StackLayout>
+
+            <!-- Stepper  -->
+            <StackLayout Spacing="12">
+                <Label Text="Stepper" Style="{ DynamicResource TextSubHead }" />
+                <Stepper />
+            </StackLayout>
+
+            
+
+            
+
+            <!-- Frame -->
+            <StackLayout Spacing="12">
+                <Label Text="Frame" Style="{ DynamicResource TextSubHead }" />
+                <Frame BackgroundColor="{StaticResource NeutralLight}"
+                       HorizontalOptions="Fill">
+                    <Label LineHeight="1.2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Style="{StaticResource TextTitle}">Make an impression
+                                </Span>
+                                <Span Text="&#x0a;" />
+                                <Span Style="{StaticResource TextBody}">Make a big impression with this clean, modern, and mobile-friendly site. Use it to communicate information to people inside or outisde your team. Share your ideas, results, and more in this visually compelling format.</Span>
+                                <Span Text="&#x0a;" />
+                                <Span Style="{StaticResource TextLink}">Learn more &gt;</Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+            </StackLayout>
+
+            <!-- BoxView -->
+            <StackLayout Spacing="12">
+                <Label Text="BoxView" Style="{ DynamicResource TextSubHead }" />
+                <BoxView HeightRequest="100"
+                         BackgroundColor="{StaticResource NeutralLight}"
+                         HorizontalOptions="Fill"/>
+            </StackLayout>
+
+            <!-- SwipeView  -->
+            <StackLayout Spacing="12">
+                <Label Text="SwipeView" Style="{ DynamicResource TextSubHead }" />
+                <SwipeView>
+                    <SwipeView.Content>
+                        <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Xamarin-logo.svg/1200px-Xamarin-logo.svg.png" />
+                    </SwipeView.Content>
+                    <SwipeView.RightItems>
+                        <SwipeItems>
+                            <SwipeItem Text="Favorite"
+                                       BackgroundColor="{StaticResource Info}" />
+                            <SwipeItem Text="Delete" 
+                                       BackgroundColor="{StaticResource Danger}" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+                </SwipeView>
+            </StackLayout>
+
+            <!--
+            
             <StackLayout Spacing="10" Padding="20">
                 <Label Text="ActivityIndicator" Style="{ DynamicResource InnerSectionHeaderStyle }" Margin="-20,0" />
                 <ActivityIndicator IsRunning="true" />

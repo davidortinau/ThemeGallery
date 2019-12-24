@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,8 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\ProductSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\RobotoMono-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" Version="4.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+    <PackageReference Include="FormsCommunityToolkit.Effects" Version="1.0.0.110-beta" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.74-nightly" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
@@ -46,6 +52,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Styles\Text.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ActivityControlReference.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ControlReference.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

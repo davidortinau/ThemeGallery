@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ThemeGallery.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ControlReference : ContentPage
+    public partial class ActivityControlReference : ContentPage
     {
-        public ControlReference()
+        public ActivityControlReference()
         {
             InitializeComponent();
-            
         }
     }
 }
