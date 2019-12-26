@@ -7,6 +7,6 @@
              x:Class="ThemeGallery.App">
     <Application.Resources>
         
-        <ResourceDictionary Source="/Styles/DefaultTheme.xaml" />
+        <ResourceDictionary Source="/Styles/LightTheme.xaml" />
     </Application.Resources>
 </Application>

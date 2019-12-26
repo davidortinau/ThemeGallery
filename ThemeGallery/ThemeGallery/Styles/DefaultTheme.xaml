@@ -85,6 +85,11 @@
     <Style BasedOn="{StaticResource BaseStyle}"
            ApplyToDerivedTypes="True"
            TargetType="FlyoutItem" />
+    
+    <!-- ContentPage -->
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+    </Style>
 
     <!-- Text / Label -->
     <Style x:Key="TextHeadline" TargetType="Label">

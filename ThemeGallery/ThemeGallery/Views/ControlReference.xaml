@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects"
              mc:Ignorable="d"
-             Shell.FlyoutBehavior="Locked"
              x:Class="ThemeGallery.Views.ControlReference">
 
     <ScrollView>

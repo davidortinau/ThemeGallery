@@ -4,9 +4,9 @@
              x:Class="ThemeGallery.Styles.DarkTheme"
              Source="DefaultTheme.xaml">
 
-    <Color x:Key="BackgroundColor">#FF000000</Color>
-    
-    <Color x:Key="TextPrimary">#B0FFFFFF</Color>
-    <Color x:Key="TextSecondary">#B0FFFFFF</Color>
+    <Color x:Key="BackgroundColor">#000000</Color>
+
+    <Color x:Key="TextPrimaryColor">#B0FFFFFF</Color>
+    <Color x:Key="TextSecondaryColor">#B0FFFFFF</Color>
     
 </ResourceDictionary>

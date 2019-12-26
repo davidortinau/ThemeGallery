@@ -14,4 +14,7 @@
     <FlyoutItem Title="Activity Views">
         <ShellContent ContentTemplate="{DataTemplate views:ActivityControlReference}"/>
     </FlyoutItem>
+
+    <MenuItem Text="Light Theme" Command="{Binding ChangeThemeCommand}" CommandParameter="light"/>
+    <MenuItem Text="Dark Theme" Command="{Binding ChangeThemeCommand}" CommandParameter="dark"/>
 </Shell>
