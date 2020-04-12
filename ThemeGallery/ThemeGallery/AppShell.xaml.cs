@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ThemeGallery.Styles;
+using ThemeGallery.ViewModels.Messages;
+using TinyMessenger;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,6 +36,10 @@ namespace ThemeGallery
                 App.Current.Resources = new LightTheme();
                 App.AppTheme = theme;
             }
+
+            DependencyService
+                .Get<TinyMessengerHub>()
+                .Publish<AppThemeChangedMessage>(new AppThemeChangedMessage());
 
             Shell.Current.FlyoutIsPresented = false;
         }

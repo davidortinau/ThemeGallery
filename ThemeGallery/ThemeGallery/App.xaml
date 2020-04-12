@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="ThemeGallery.App">
     <Application.Resources>
-        
         <ResourceDictionary Source="/Styles/LightTheme.xaml" />
     </Application.Resources>
 </Application>

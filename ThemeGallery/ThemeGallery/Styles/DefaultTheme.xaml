@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                     x:Class="ThemeGallery.Styles.DefaultTheme">
 
     <!-- Colors -->
@@ -32,10 +32,10 @@
     <Color x:Key="TextPrimaryColor">#323130</Color>
     <Color x:Key="TextSecondaryColor">#a3a2a0</Color>
 
-    <Color x:Key="Success">Green</Color>
-    <Color x:Key="Info">Yellow</Color>
-    <Color x:Key="Warning">Gold</Color>
-    <Color x:Key="Danger">#CC0000</Color>
+
+    <Color x:Key="Success">#FF3300</Color>
+    <Color x:Key="Info">#ffded6</Color>
+    <Color x:Key="Warning">#ff4b1f</Color>
 
     <Color x:Key="FlyoutGradientStart">#FF017ED8</Color>
     <Color x:Key="FlyoutGradientEnd">#FF14D9D9</Color>
@@ -85,7 +85,7 @@
     <Style BasedOn="{StaticResource BaseStyle}"
            ApplyToDerivedTypes="True"
            TargetType="FlyoutItem" />
-    
+
     <!-- ContentPage -->
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
@@ -95,18 +95,19 @@
     <Style x:Key="TextHeadline" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}" />
         <Setter Property="FontSize" Value="{StaticResource TextSizeHeadline}" />
+        <Setter Property="FontFamily" Value="Roboto"/>
     </Style>
-    
+
     <Style x:Key="TextTitle" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}" />
         <Setter Property="FontSize" Value="{StaticResource TextSizeTitle}" />
     </Style>
-    
+
     <Style x:Key="TextSubHead" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}" />
         <Setter Property="FontSize" Value="{StaticResource TextSizeSubHeading}" />
     </Style>
-    
+
     <Style x:Key="TextSubheadSecondary" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextSecondaryColor}" />
         <Setter Property="FontSize" Value="{StaticResource TextSizeSubHeading}" />
@@ -201,10 +202,21 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-    
+
     <!-- Checkbox -->
     <Style TargetType="CheckBox">
         <Setter Property="Color" Value="{StaticResource ThemePrimary}"/>
+    </Style>
+
+    <Style x:Key="CheckBoxLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}"/>
+    </Style>
+
+    <!-- RadioButton -->
+    <Style TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}"/>
+        <Setter Property="BorderColor" Value="{StaticResource ThemePrimary}"/>
     </Style>
 
     <!-- Entry -->
@@ -219,7 +231,7 @@
     </Style>
 
     <!-- Picker -->
-    
+
     <!-- Switch -->
     <Style TargetType="Switch">
         <Setter Property="HorizontalOptions" Value="Start"/>
@@ -275,7 +287,7 @@
         <Setter Property="CornerRadius" Value="0"/>
         <Setter Property="BorderColor" Value="{StaticResource NeutralSecondary}"/>
     </Style>
-        
+
     <!-- ActivityIndicator -->
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{StaticResource ThemePrimary}"/>
@@ -287,13 +299,13 @@
         <Setter Property="ProgressColor" Value="{StaticResource ThemePrimary}"/>
         <!-- missing color for track bg -->
     </Style>
-    
+
     <!-- IndicatorView -->
     <Style TargetType="IndicatorView">
         <Setter Property="IndicatorColor" Value="{StaticResource NeutralLight}"/>
         <Setter Property="SelectedIndicatorColor" Value="{StaticResource ThemePrimary}"/>
     </Style>
-    
+
     <!-- SwipeItem -->
     <Style TargetType="SwipeItemView" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{StaticResource NeutralLight}"/>

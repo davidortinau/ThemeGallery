@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using ThemeGallery.Styles;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +25,8 @@ namespace ThemeGallery.UWP
     /// </summary>
     sealed partial class App : Application
     {
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +35,23 @@ namespace ThemeGallery.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            UISettings uiSettings = new UISettings();
+            uiSettings.ColorValuesChanged += ColorValuesChanged;
+        }
+
+        private void ColorValuesChanged(UISettings sender, object args)
+        {
+            var backgroundColor = sender.GetColorValue(UIColorType.Background);
+            var isDarkMode = backgroundColor == Colors.Black;
+            if (isDarkMode)
+            {
+                ThemeGallery.App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                ThemeGallery.App.Current.Resources = new LightTheme();
+            }
         }
 
         /// <summary>

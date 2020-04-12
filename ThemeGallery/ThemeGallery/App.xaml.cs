@@ -1,16 +1,15 @@
 ﻿using System;
 using ThemeGallery.Views;
+using TinyMessenger;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: ExportFont("Resources.ProductSans-Regular.ttf", Alias = "Product")]
-[assembly: ExportFont("Resources.RobotoMono-Regular.ttf", Alias = "Roboto")]
 namespace ThemeGallery
 {
     public partial class App : Application
     {
 
-        public static string AppTheme { get; set; }
+        public static string AppTheme { get; set; } = "light";
 
         public App()
         {
@@ -18,13 +17,15 @@ namespace ThemeGallery
                 "IndicatorView_Experimental",
                 "SwipeView_Experimental",
                 "CarouselView_Experimental",
-                "Shell_UWP_Experimental"
+                "Shell_UWP_Experimental",
+                "AppTheme_Experimental"
             });
 
             InitializeComponent();
 
+            DependencyService.Register<TinyMessengerHub>();
+
             MainPage = new AppShell();
-            //MainPage = new ControlReference();
         }
 
         protected override void OnStart()

@@ -3,14 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects"
+             xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects" xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
              mc:Ignorable="d"
+             Title="Control Reference"
              x:Class="ThemeGallery.Views.ControlReference">
+
+    <ContentPage.BindingContext>
+        <vm:AppViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <StackLayout Margin="24,20" Spacing="20">
 
-            <Label Text="Light Theme"
+            <Label Text="{Binding SelectedTheme}"
                    Margin="0,0,0,20" HeightRequest="40"
                    VerticalTextAlignment="Center"
                    Style="{ DynamicResource TextHeadline }"
@@ -44,16 +49,23 @@
                 <Label Text="Checkbox" Style="{ DynamicResource TextSubHead }" />
                 <StackLayout Orientation="Horizontal">
                     <CheckBox VerticalOptions="Center"/>
-                    <Label Text="Unchecked" VerticalOptions="Center"/>
+                    <Label Text="Unchecked" VerticalOptions="Center" Style="{StaticResource CheckBoxLabel}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <CheckBox VerticalOptions="Center" IsChecked="True"/>
-                    <Label Text="Checked" VerticalOptions="Center"/>
+                    <Label Text="Checked" VerticalOptions="Center" Style="{StaticResource CheckBoxLabel}"/>
                 </StackLayout>
 
             </StackLayout>
 
-
+            <!-- RadioButton -->
+            <StackLayout Spacing="12">
+                <Label Text="RadioButton" Style="{ DynamicResource TextSubHead }" />
+                <RadioButton GroupName="radio" Text="One" IsChecked="True"/>
+                <RadioButton GroupName="radio" Text="Two"/>
+                <RadioButton GroupName="radio" Text="Three"/>
+                <RadioButton GroupName="radio" Text="Four"/>
+            </StackLayout>
 
             <!-- Switch -->
             <StackLayout Spacing="12">
@@ -228,7 +240,7 @@
                             <SwipeItem Text="Favorite"
                                        BackgroundColor="{StaticResource Info}" />
                             <SwipeItem Text="Delete" 
-                                       BackgroundColor="{StaticResource Danger}" />
+                                       BackgroundColor="{StaticResource Warning}" />
                         </SwipeItems>
                     </SwipeView.RightItems>
                 </SwipeView>
