@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ThemeGallery"
+             xmlns:droid="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:effects="clr-namespace:FormsCommunityToolkit.Effects;assembly=FormsCommunityToolkit.Effects" xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
              mc:Ignorable="d"
              Title="Control Reference"
@@ -34,15 +36,7 @@
                 <Label Text="TextCaptionSecondary" Style="{DynamicResource TextCaptionSecondary}" />
             </StackLayout>
 
-            <!-- BUTTON  -->
-            <StackLayout Spacing="12">
-                <Label Text="Button" Style="{ DynamicResource TextSubHead }" />
-                <Button Text="Enabled Button" />
-                <Button Text="Disabled Button" IsEnabled="False" />
-                <Button Text="Primary Button" Style="{StaticResource PrimaryButton}" />
-                <Button Text="Primary Disabled Button" Style="{StaticResource PrimaryButton}" IsEnabled="False" />
-
-            </StackLayout>
+            
 
             <!-- Checkbox -->
             <StackLayout Spacing="12">
@@ -61,7 +55,15 @@
             <!-- RadioButton -->
             <StackLayout Spacing="12">
                 <Label Text="RadioButton" Style="{ DynamicResource TextSubHead }" />
-                <RadioButton GroupName="radio" Text="One" IsChecked="True"/>
+                <RadioButton GroupName="radio" Text="One" IsChecked="True">
+                    <RadioButton.ImageSource>
+                        <FontImageSource
+                            FontFamily="FontAwesome"
+                            Glyph="{x:Static local:IconFont.GraduationCap}"
+                            Color="Black"
+                            Size="16"/>
+                    </RadioButton.ImageSource>
+                </RadioButton>
                 <RadioButton GroupName="radio" Text="Two"/>
                 <RadioButton GroupName="radio" Text="Three"/>
                 <RadioButton GroupName="radio" Text="Four"/>

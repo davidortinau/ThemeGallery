@@ -7,6 +7,10 @@
              mc:Ignorable="d"
              x:Class="ThemeGallery.AppShell">
     
+    <FlyoutItem Title="Buttons">
+        <ShellContent ContentTemplate="{DataTemplate views:ButtonsPage}"/>
+    </FlyoutItem>
+    
     <FlyoutItem Title="UI Views">
         <ShellContent ContentTemplate="{DataTemplate views:ControlReference}"/>
     </FlyoutItem>
