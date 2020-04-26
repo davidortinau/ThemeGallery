@@ -7,6 +7,10 @@
              mc:Ignorable="d"
              x:Class="ThemeGallery.AppShell">
 
+    <FlyoutItem Title="Cards">
+        <ShellContent ContentTemplate="{DataTemplate views:CardsPage}"/>
+    </FlyoutItem>
+    
     <FlyoutItem Title="Entries">
         <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
     </FlyoutItem>

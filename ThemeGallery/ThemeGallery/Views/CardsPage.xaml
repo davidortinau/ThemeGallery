@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
+             mc:Ignorable="d"
+             Title="Cards"
+             x:Class="ThemeGallery.Views.CardsPage">
+    <ContentPage.BindingContext>
+        <vm:AppViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="#e1e1e1"/>
+                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style TargetType="Label" Class="CardTitle">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="#212121"/>
+                <Setter Property="LineHeight" Value="20"/>
+            </Style>
+            <Style TargetType="Label" Class="CardSubTitle">
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="TextColor" Value="#6e6e6e"/>
+                <Setter Property="LineBreakMode" Value="18"/>
+            </Style>
+        </ResourceDictionary>
+
+        
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Margin="24,20" Spacing="20">
+
+            <Label Text="{Binding SelectedTheme}"
+                   Margin="0,0,0,20" HeightRequest="40"
+                   VerticalTextAlignment="Center"
+                   Style="{ DynamicResource TextHeadline }"
+                   />
+
+            <Label Text="Medium" Style="{ DynamicResource TextTitle }" />
+
+            <Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <BoxView BackgroundColor="#999999"/>
+                    <StackLayout Grid.Row="1" Margin="10,12"> 
+                        <Label Text="Title" StyleClass="CardTitle"/>
+                        <Label Text="SubTitle" StyleClass="CardSubTitle"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
