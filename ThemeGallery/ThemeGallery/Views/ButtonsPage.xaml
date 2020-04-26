@@ -40,8 +40,8 @@
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource NeutralLighter}" />
-                                    <Setter Property="BorderColor" Value="{StaticResource NeutralLighter}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource NeutralLight}" />
+                                    <Setter Property="BorderColor" Value="{StaticResource NeutralLight}" />
 
                                 </VisualState.Setters>
                             </VisualState>
@@ -69,8 +69,8 @@
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource NeutralLighter}" />
-                                    <Setter Property="BorderColor" Value="{StaticResource NeutralLighter}" />
+                                    <Setter Property="TextColor" Value="{StaticResource NeutralLight}" />
+                                    <Setter Property="BorderColor" Value="{StaticResource NeutralLight}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

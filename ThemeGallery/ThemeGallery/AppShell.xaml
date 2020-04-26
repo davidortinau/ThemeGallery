@@ -6,7 +6,11 @@
              xmlns:views="clr-namespace:ThemeGallery.Views"
              mc:Ignorable="d"
              x:Class="ThemeGallery.AppShell">
-    
+
+    <FlyoutItem Title="Entries">
+        <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
+    </FlyoutItem>
+
     <FlyoutItem Title="Buttons">
         <ShellContent ContentTemplate="{DataTemplate views:ButtonsPage}"/>
     </FlyoutItem>
