@@ -7,6 +7,18 @@
              mc:Ignorable="d"
              x:Class="ThemeGallery.AppShell">
 
+    <FlyoutItem Title="CheckBoxes">
+        <ShellContent ContentTemplate="{DataTemplate views:CheckBoxesPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="RadioButtons">
+        <ShellContent ContentTemplate="{DataTemplate views:RadioButtonsPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Switches">
+        <ShellContent ContentTemplate="{DataTemplate views:SwitchesPage}"/>
+    </FlyoutItem>
+
     <FlyoutItem Title="Cards">
         <ShellContent ContentTemplate="{DataTemplate views:CardsPage}"/>
     </FlyoutItem>

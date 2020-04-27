@@ -27,7 +27,7 @@
             <Style TargetType="Label" Class="CardSubTitle">
                 <Setter Property="FontSize" Value="13"/>
                 <Setter Property="TextColor" Value="#6e6e6e"/>
-                <Setter Property="LineBreakMode" Value="18"/>
+                <Setter Property="LineHeight" Value="18"/>
             </Style>
         </ResourceDictionary>
 

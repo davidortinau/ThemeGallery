@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
+    x:Class="ThemeGallery.Views.SwitchesPage"
+    Title="Switch">
+    <ContentPage.BindingContext>
+        <vm:AppViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Switch">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="ThumbColor" Value="White" />
+                                    <Setter Property="OnColor" Value="{StaticResource ThemePrimary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="IsToggled">
+                                <VisualState.Setters>
+                                    
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Margin="24,20" Spacing="20">
+
+            <Label Text="{Binding SelectedTheme}"
+                   Margin="0,0,0,20" HeightRequest="40"
+                   VerticalTextAlignment="Center"
+                   Style="{ DynamicResource TextHeadline }"
+                   />
+
+            <FlexLayout Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround">
+                <Switch IsToggled="True" />
+                <Switch IsToggled="False" />
+            </FlexLayout>
+            <FlexLayout Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround">
+                <Label Text="On" />
+                <Label Text="Off" />
+            </FlexLayout>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
