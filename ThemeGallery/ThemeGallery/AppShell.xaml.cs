@@ -19,29 +19,7 @@ namespace ThemeGallery
         {
             BindingContext = this;
 
-            ChangeThemeCommand = new Command<string>(OnChangeTheme);
-
             InitializeComponent();
-        }
-
-        private void OnChangeTheme(string theme)
-        {
-            if (theme == "dark")
-            {
-                App.Current.Resources = new DarkTheme();
-                App.AppTheme = theme;
-            }
-            else
-            {
-                App.Current.Resources = new LightTheme();
-                App.AppTheme = theme;
-            }
-
-            DependencyService
-                .Get<TinyMessengerHub>()
-                .Publish<AppThemeChangedMessage>(new AppThemeChangedMessage());
-
-            Shell.Current.FlyoutIsPresented = false;
         }
     }
 }
