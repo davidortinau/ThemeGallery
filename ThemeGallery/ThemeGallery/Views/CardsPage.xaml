@@ -18,16 +18,15 @@
                 <Setter Property="BackgroundColor" Value="#FFFFFF"/>
                 <Setter Property="CornerRadius" Value="8"/>
                 <Setter Property="Padding" Value="0"/>
+                <Setter Property="HasShadow" Value="False"/>
             </Style>
             <Style TargetType="Label" Class="CardTitle">
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="TextColor" Value="#212121"/>
-                <Setter Property="LineHeight" Value="20"/>
             </Style>
             <Style TargetType="Label" Class="CardSubTitle">
                 <Setter Property="FontSize" Value="13"/>
                 <Setter Property="TextColor" Value="#6e6e6e"/>
-                <Setter Property="LineHeight" Value="18"/>
             </Style>
         </ResourceDictionary>
 
@@ -46,14 +45,14 @@
             <Label Text="Medium" Style="{ DynamicResource TextTitle }" />
 
             <Frame>
-                <Grid>
+                <Grid HeightRequest="340">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="3*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <BoxView BackgroundColor="#999999"/>
                     <StackLayout Grid.Row="1" Margin="10,12"> 
-                        <Label Text="Title" StyleClass="CardTitle"/>
+                        <Label Text="Title" StyleClass="CardTitle" />
                         <Label Text="SubTitle" StyleClass="CardSubTitle"/>
                     </StackLayout>
                 </Grid>

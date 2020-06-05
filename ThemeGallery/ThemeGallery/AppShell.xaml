@@ -5,7 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:ThemeGallery.Views"
              mc:Ignorable="d"
+             FlyoutBackgroundColor="{DynamicResource BackgroundColor}"
+             BackgroundColor="Blue"
              x:Class="ThemeGallery.AppShell">
+
+    <FlyoutItem Title="Entries">
+        <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
+    </FlyoutItem>
 
     <FlyoutItem Title="CheckBoxes">
         <ShellContent ContentTemplate="{DataTemplate views:CheckBoxesPage}"/>
@@ -23,10 +29,6 @@
         <ShellContent ContentTemplate="{DataTemplate views:CardsPage}"/>
     </FlyoutItem>
     
-    <FlyoutItem Title="Entries">
-        <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
-    </FlyoutItem>
-
     <FlyoutItem Title="Buttons">
         <ShellContent ContentTemplate="{DataTemplate views:ButtonsPage}"/>
     </FlyoutItem>

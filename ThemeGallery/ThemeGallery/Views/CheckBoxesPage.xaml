@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
     x:Class="ThemeGallery.Views.CheckBoxesPage"
+    Shell.BackgroundColor="{StaticResource ThemePrimary}"
     Title="CheckBox">
 <ContentPage.BindingContext>
         <vm:AppViewModel/>
@@ -34,12 +35,13 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ScrollView>
         <StackLayout Margin="24,20" Spacing="20">
-
+            
             <Label Text="{Binding SelectedTheme}"
                    Margin="0,0,0,20" HeightRequest="40"
                    VerticalTextAlignment="Center"
