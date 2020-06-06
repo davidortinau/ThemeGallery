@@ -84,10 +84,10 @@
                 Value="#CC0000" />
         <Setter Property="Shell.NavBarHasShadow"
                 Value="False"/>
-        
-        <Setter Property="Shell.FlyoutBackgroundColor"
-                Value="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}"/>
     </Style>
+    <Style BasedOn="{StaticResource BaseStyle}"
+           ApplyToDerivedTypes="True"
+           TargetType="FlyoutItem" />
 
     <Style
             TargetType="Label"
@@ -99,7 +99,8 @@
             <Setter
                 Property="TextColor"
                 Value="{AppThemeBinding Dark={StaticResource TextPrimaryColor_Dark}, Light={StaticResource TextPrimaryColor_Light}}" />
-            <Setter
+        
+        <Setter
                 Property="HeightRequest"
                 Value="44" />
         </Style>
@@ -108,6 +109,7 @@
             TargetType="Layout"
             ApplyToDerivedTypes="True"
             Class="FlyoutItemGridStyle">
+
             <Setter
                 Property="HeightRequest"
                 Value="44" />
@@ -141,10 +143,6 @@
                 </VisualStateGroupList>
             </Setter>
         </Style>
-
-    <Style BasedOn="{StaticResource BaseStyle}"
-           ApplyToDerivedTypes="True"
-           TargetType="FlyoutItem" />
 
     <!-- ContentPage -->
     <Style TargetType="Page" ApplyToDerivedTypes="True">

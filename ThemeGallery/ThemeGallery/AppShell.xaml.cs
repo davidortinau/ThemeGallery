@@ -17,9 +17,16 @@ namespace ThemeGallery
 
         public AppShell()
         {
+            ChangeThemeCommand = new Command<string>(OnThemeChange);
+
             BindingContext = this;
 
             InitializeComponent();
+        }
+
+        private void OnThemeChange(string theme)
+        {
+            App.Current.UserAppTheme = (theme == "dark") ? OSAppTheme.Dark : OSAppTheme.Light;
         }
     }
 }
