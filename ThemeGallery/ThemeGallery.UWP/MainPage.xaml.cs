@@ -20,38 +20,11 @@ namespace ThemeGallery.UWP
 {
     public sealed partial class MainPage
     {
-
-        UISettings uiSettings;
-
         public MainPage()
         {
             this.InitializeComponent();
 
             LoadApplication(new ThemeGallery.App());
-   
-            uiSettings = new UISettings();
-            uiSettings.ColorValuesChanged += ColorValuesChanged;
-        }
-
-        private void ColorValuesChanged(UISettings sender, object args)
-        {
-            var backgroundColor = sender.GetColorValue(UIColorType.Background);
-            var isDarkMode = backgroundColor == Colors.Black;
-            if(isDarkMode)
-            {
-                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    ThemeGallery.App.Current.Resources = new DarkTheme();
-                });
-                
-            }
-            else
-            {
-                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    ThemeGallery.App.Current.Resources = new LightTheme();
-                });
-            }
         }
     }
 }

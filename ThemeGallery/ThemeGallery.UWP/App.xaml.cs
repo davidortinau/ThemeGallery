@@ -35,23 +35,6 @@ namespace ThemeGallery.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            UISettings uiSettings = new UISettings();
-            uiSettings.ColorValuesChanged += ColorValuesChanged;
-        }
-
-        private void ColorValuesChanged(UISettings sender, object args)
-        {
-            var backgroundColor = sender.GetColorValue(UIColorType.Background);
-            var isDarkMode = backgroundColor == Colors.Black;
-            if (isDarkMode)
-            {
-                ThemeGallery.App.Current.Resources = new DarkTheme();
-            }
-            else
-            {
-                ThemeGallery.App.Current.Resources = new LightTheme();
-            }
         }
 
         /// <summary>
@@ -74,11 +57,6 @@ namespace ThemeGallery.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.SetFlags(
-                    "IndicatorView_Experimental",
-                    "SwipeView_Experimental",
-                    "CarouselView_Experimental",
-                    "ShellUWP_Experimental");
                 Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
