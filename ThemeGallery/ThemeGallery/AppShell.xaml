@@ -5,6 +5,10 @@
        FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}"
              x:Class="ThemeGallery.AppShell">
 
+  <FlyoutItem Title="RadioButtons">
+        <ShellContent ContentTemplate="{DataTemplate views:RadioButtonsPage}"/>
+    </FlyoutItem>
+
     <FlyoutItem Title="Entries">
         <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
     </FlyoutItem>
@@ -13,9 +17,7 @@
         <ShellContent ContentTemplate="{DataTemplate views:CheckBoxesPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="RadioButtons">
-        <ShellContent ContentTemplate="{DataTemplate views:RadioButtonsPage}"/>
-    </FlyoutItem>
+    
 
     <FlyoutItem Title="Switches">
         <ShellContent ContentTemplate="{DataTemplate views:SwitchesPage}"/>

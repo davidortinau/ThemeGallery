@@ -53,20 +53,29 @@
             </StackLayout>
 
             <!-- RadioButton -->
-            <StackLayout Spacing="12">
+            <StackLayout Spacing="12" RadioButtonGroup.GroupName="radio">
                 <Label Text="RadioButton" Style="{ DynamicResource TextSubHead }" />
-                <RadioButton GroupName="radio" Text="One" IsChecked="True">
-                    <RadioButton.ImageSource>
-                        <FontImageSource
+                <!--<RadioButton IsChecked="True">
+                  <RadioButton.Content>
+                    <DataTemplate>
+                      <StackLayout Orientation="Horizontal">
+                        <Image VerticalOptions="Center">
+                          <Image.Source>
+                            <FontImageSource
                             FontFamily="FontAwesome"
                             Glyph="{x:Static local:IconFont.GraduationCap}"
                             Color="Black"
                             Size="16"/>
-                    </RadioButton.ImageSource>
-                </RadioButton>
-                <RadioButton GroupName="radio" Text="Two"/>
-                <RadioButton GroupName="radio" Text="Three"/>
-                <RadioButton GroupName="radio" Text="Four"/>
+                          </Image.Source>
+                        </Image>
+                        <Label Text="One" VerticalOptions="Center"/>
+                      </StackLayout>
+                    </DataTemplate>
+                  </RadioButton.Content>
+                </RadioButton>-->
+                <RadioButton Content="Two"/>
+                <RadioButton Content="Three"/>
+                <RadioButton Content="Four"/>
             </StackLayout>
 
             <!-- Switch -->

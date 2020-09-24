@@ -13,12 +13,9 @@ namespace ThemeGallery
 
         public App()
         {
-            Device.SetFlags(new string[] { 
-                "IndicatorView_Experimental",
-                "SwipeView_Experimental",
-                "CarouselView_Experimental",
-                "Shell_UWP_Experimental",
-                "AppTheme_Experimental"
+            Device.SetFlags(new string[] {
+                "RadioButton_Experimental",
+                "Shell_UWP_Experimental"
             });
 
             InitializeComponent();

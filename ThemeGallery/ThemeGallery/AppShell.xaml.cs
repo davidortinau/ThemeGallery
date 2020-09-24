@@ -28,5 +28,15 @@ namespace ThemeGallery
         {
             App.Current.UserAppTheme = (theme == "dark") ? OSAppTheme.Dark : OSAppTheme.Light;
         }
+
+        protected override void OnNavigating(ShellNavigatingEventArgs args)
+        {
+            base.OnNavigating(args);
+        }
+
+        protected override void OnNavigated(ShellNavigatedEventArgs args)
+        {
+            base.OnNavigated(args);
+        }
     }
 }

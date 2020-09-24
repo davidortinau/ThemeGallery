@@ -1,66 +1,179 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
-    xmlns:local="clr-namespace:ThemeGallery"
-    x:Class="ThemeGallery.Views.RadioButtonsPage"
-    Title="RadioButton">
-<ContentPage.BindingContext>
-        <vm:AppViewModel/>
-    </ContentPage.BindingContext>
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:vm="clr-namespace:ThemeGallery.ViewModels"
+  xmlns:local="clr-namespace:ThemeGallery"
+  x:Class="ThemeGallery.Views.RadioButtonsPage"
+  Title="RadioButton">
+  <ContentPage.BindingContext>
+    <vm:AppViewModel />
+  </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="RadioButton">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource NeutralTertiary}" />
-                                    
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="IsChecked">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource ThemePrimary}" />
-                                    
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                                                        <Setter Property="TextColor" Value="{StaticResource NeutralLight}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <ControlTemplate
+        x:Key="CalendarRadioTemplate">
+        <Frame
+          BorderColor="#F3F2F1"
+          BackgroundColor="#F3F2F1"
+          HasShadow="False"
+          HeightRequest="100"
+          WidthRequest="100"
+          HorizontalOptions="Start"
+          VerticalOptions="Start"
+          Padding="0">
 
-    <ScrollView>
-        <StackLayout Margin="24,20" Spacing="20">
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+              <VisualStateGroup
+                x:Name="CheckedStates">
 
-            <Label Text="{Binding SelectedTheme}"
-                   Margin="0,0,0,20" HeightRequest="40"
-                   VerticalTextAlignment="Center"
-                   Style="{ DynamicResource TextHeadline }"
-                   />
+                <VisualState
+                  x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter
+                      Property="BorderColor"
+                      Value="#FF3300" />
+                    <Setter
+                      TargetName="Check"
+                      Property="Opacity"
+                      Value="1" />
+                  </VisualState.Setters>
+                </VisualState>
 
-            <FlexLayout Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround">
-                <RadioButton IsChecked="True" />
-                <RadioButton IsChecked="False" />
-                                <RadioButton IsChecked="True" IsEnabled="False"/>
-            </FlexLayout>
-            <FlexLayout Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround">
-                <Label Text="On" />
-                <Label Text="Off" />
-                                <Label Text="Disabled" />
-            </FlexLayout>
+                <VisualState
+                  x:Name="Unchecked">
+                  <VisualState.Setters>
+                    <Setter
+                      Property="BackgroundColor"
+                      Value="#f3f2f1" />
+                    <Setter
+                      Property="BorderColor"
+                      Value="#f3f2f1" />
+                    <Setter
+                      TargetName="Check"
+                      Property="Opacity"
+                      Value="0" />
+                  </VisualState.Setters>
+                </VisualState>
 
-            
+              </VisualStateGroup>
+            </VisualStateGroupList>
+          </VisualStateManager.VisualStateGroups>
+
+          <Grid
+            Margin="4"
+            WidthRequest="100">
+            <Grid
+              WidthRequest="18"
+              HeightRequest="18"
+              HorizontalOptions="End"
+              VerticalOptions="Start">
+              <Ellipse
+                Stroke="#FF3300"
+                WidthRequest="16"
+                HeightRequest="16"
+                StrokeThickness="0.5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Fill="White" />
+              <Ellipse
+                x:Name="Check"
+                WidthRequest="8"
+                HeightRequest="8"
+                Fill="#FF3300"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            </Grid>
+            <ContentPresenter></ContentPresenter>
+          </Grid>
+        </Frame>
+      </ControlTemplate>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ScrollView>
+    <StackLayout
+      Margin="24,20"
+      Spacing="20">
+
+      <Label
+        Text="{Binding SelectedTheme}"
+        Margin="0,0,0,20"
+        HeightRequest="40"
+        VerticalTextAlignment="Center"
+        Style="{ DynamicResource TextHeadline }" />
+
+      <Label
+          Text="RadioButton"
+          Style="{ DynamicResource TextSubHead }" />
+
+      <StackLayout
+        RadioButtonGroup.GroupName="SimpleRadios"
+        Orientation="Horizontal">
+        
+        <RadioButton
+          Content="Day" />
+        <RadioButton
+          Content="Week" />
+        <RadioButton
+          Content="Month" />
+      </StackLayout>
+
+      <StackLayout
+        Orientation="Horizontal"
+        RadioButtonGroup.GroupName="CalendarMode">
+        <RadioButton
+          ControlTemplate="{StaticResource 
+                        CalendarRadioTemplate}">
+          <RadioButton.Content>
+            <StackLayout
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+              <Image
+                Source="{FontImage FontFamily=FontAwesome, 
+                        Glyph={x:Static local:IconFont.CalendarDay}, 
+                        Color=#323130,Size=32}" />
+              <Label
+                Text="Day"
+                TextColor="#323130" />
+            </StackLayout>
+          </RadioButton.Content>
+        </RadioButton>
+        <RadioButton 
+    ControlTemplate="{StaticResource 
+                        CalendarRadioTemplate}">
+    <RadioButton.Content>
+        <StackLayout 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center">
+            <Image
+                Source="{FontImage FontFamily=FontAwesome, 
+                        Glyph={x:Static local:IconFont.CalendarWeek}, 
+                        Color=#323130,Size=32}"/>
+            <Label Text="Week" TextColor="#323130"/>
         </StackLayout>
-    </ScrollView>
+    </RadioButton.Content>
+</RadioButton>
+        <RadioButton 
+    ControlTemplate="{StaticResource 
+                        CalendarRadioTemplate}">
+    <RadioButton.Content>
+        <StackLayout 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center">
+            <Image
+                Source="{FontImage FontFamily=FontAwesome, 
+                        Glyph={x:Static local:IconFont.Calendar}, 
+                        Color=#323130,Size=32}"/>
+            <Label Text="Month" TextColor="#323130"/>
+        </StackLayout>
+    </RadioButton.Content>
+</RadioButton>
+      </StackLayout>
+
+
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
