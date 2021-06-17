@@ -69,7 +69,7 @@
     <PackageReference Include="FormsCommunityToolkit.Effects">
       <Version>1.0.0.110-beta</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1487-pre1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.1.1502-nightly" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
   <ItemGroup>

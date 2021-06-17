@@ -106,13 +106,13 @@
         Style="{ DynamicResource TextHeadline }" />
 
       <Label
-          Text="RadioButton"
-          Style="{ DynamicResource TextSubHead }" />
+        Text="RadioButton"
+        Style="{ DynamicResource TextSubHead }" />
 
       <StackLayout
         RadioButtonGroup.GroupName="SimpleRadios"
         Orientation="Horizontal">
-        
+
         <RadioButton
           Content="Day" />
         <RadioButton
@@ -141,39 +141,45 @@
             </StackLayout>
           </RadioButton.Content>
         </RadioButton>
-        <RadioButton 
-    ControlTemplate="{StaticResource 
+        <RadioButton
+          ControlTemplate="{StaticResource 
                         CalendarRadioTemplate}">
-    <RadioButton.Content>
-        <StackLayout 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center">
-            <Image
+          <RadioButton.Content>
+            <StackLayout
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+              <Image
                 Source="{FontImage FontFamily=FontAwesome, 
                         Glyph={x:Static local:IconFont.CalendarWeek}, 
-                        Color=#323130,Size=32}"/>
-            <Label Text="Week" TextColor="#323130"/>
-        </StackLayout>
-    </RadioButton.Content>
-</RadioButton>
-        <RadioButton 
-    ControlTemplate="{StaticResource 
+                        Color=#323130,Size=32}" />
+              <Label
+                Text="Week"
+                TextColor="#323130" />
+            </StackLayout>
+          </RadioButton.Content>
+        </RadioButton>
+        <RadioButton
+          ControlTemplate="{StaticResource 
                         CalendarRadioTemplate}">
-    <RadioButton.Content>
-        <StackLayout 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center">
-            <Image
+          <RadioButton.Content>
+            <StackLayout
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+              <Image
                 Source="{FontImage FontFamily=FontAwesome, 
                         Glyph={x:Static local:IconFont.Calendar}, 
-                        Color=#323130,Size=32}"/>
-            <Label Text="Month" TextColor="#323130"/>
-        </StackLayout>
-    </RadioButton.Content>
-</RadioButton>
+                        Color=#323130,Size=32}" />
+              <Label
+                Text="Month"
+                TextColor="#323130" />
+            </StackLayout>
+          </RadioButton.Content>
+        </RadioButton>
       </StackLayout>
 
-
+      <Button
+        Text="Go To Checkboxes"
+        Clicked="Button_Clicked" />
     </StackLayout>
   </ScrollView>
 </ContentPage>

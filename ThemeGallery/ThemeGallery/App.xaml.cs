@@ -23,6 +23,16 @@ namespace ThemeGallery
             DependencyService.Register<TinyMessengerHub>();
 
             MainPage = new AppShell();
+
+            //var tp = new TabbedPage();
+            //tp.Children.Add(new RadioButtonsPage());
+            //tp.Children.Add(new CheckBoxesPage());
+            //tp.Children.Add(new ButtonsPage());
+            //tp.Children.Add(new EntriesPage());
+
+
+            //MainPage = tp;
+
         }
 
         protected override void OnStart()

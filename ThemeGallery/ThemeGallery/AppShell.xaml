@@ -1,44 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:views="clr-namespace:ThemeGallery.Views"
-       FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}"
-             x:Class="ThemeGallery.AppShell">
+<Shell
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:views="clr-namespace:ThemeGallery.Views"
+  FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}"
+  x:Class="ThemeGallery.AppShell">
 
-  <FlyoutItem Title="RadioButtons">
-        <ShellContent ContentTemplate="{DataTemplate views:RadioButtonsPage}"/>
-    </FlyoutItem>
+  <FlyoutItem
+    Title="Activity Views">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:ActivityControlReference}" />
+  </FlyoutItem>
 
-    <FlyoutItem Title="Entries">
-        <ShellContent ContentTemplate="{DataTemplate views:EntriesPage}"/>
-    </FlyoutItem>
+  <FlyoutItem
+    Title="Buttons">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:ButtonsPage}" />
+  </FlyoutItem>
 
-    <FlyoutItem Title="CheckBoxes">
-        <ShellContent ContentTemplate="{DataTemplate views:CheckBoxesPage}"/>
-    </FlyoutItem>
+  <FlyoutItem
+    Title="Cards">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:CardsPage}" />
+  </FlyoutItem>
 
-    
+  <FlyoutItem
+    Title="CheckBoxes">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:CheckBoxesPage}" />
+  </FlyoutItem>
 
-    <FlyoutItem Title="Switches">
-        <ShellContent ContentTemplate="{DataTemplate views:SwitchesPage}"/>
-    </FlyoutItem>
+  <FlyoutItem
+    Title="Entries">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:EntriesPage}" />
+  </FlyoutItem>
 
-    <FlyoutItem Title="Cards">
-        <ShellContent ContentTemplate="{DataTemplate views:CardsPage}"/>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Buttons">
-        <ShellContent ContentTemplate="{DataTemplate views:ButtonsPage}"/>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="UI Views">
-        <ShellContent ContentTemplate="{DataTemplate views:ControlReference}"/>
-    </FlyoutItem>
 
-    <FlyoutItem Title="Activity Views">
-        <ShellContent ContentTemplate="{DataTemplate views:ActivityControlReference}"/>
-    </FlyoutItem>
+  <FlyoutItem
+    Title="RadioButtons">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:RadioButtonsPage}" />
+  </FlyoutItem>
 
-    <MenuItem Text="Light Theme" Command="{Binding ChangeThemeCommand}" CommandParameter="light"/>
-    <MenuItem Text="Dark Theme" Command="{Binding ChangeThemeCommand}" CommandParameter="dark"/>
+  <FlyoutItem
+    Title="Switches">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:SwitchesPage}" />
+  </FlyoutItem>
+
+
+
+  <FlyoutItem
+    Title="UI Views">
+    <ShellContent
+      ContentTemplate="{DataTemplate views:ControlReference}" />
+  </FlyoutItem>
+
+
+  <MenuItem
+    Text="Light Theme"
+    Command="{Binding ChangeThemeCommand}"
+    CommandParameter="light" />
+  <MenuItem
+    Text="Dark Theme"
+    Command="{Binding ChangeThemeCommand}"
+    CommandParameter="dark" />
 </Shell>
